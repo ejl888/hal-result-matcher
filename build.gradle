@@ -1,0 +1,16 @@
+version '0.1.0'
+
+apply plugin : 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.springframework.hateoas:spring-hateoas:0.17.0.RELEASE',
+            'org.springframework:spring-test:3.2.9.RELEASE'
+}
+
