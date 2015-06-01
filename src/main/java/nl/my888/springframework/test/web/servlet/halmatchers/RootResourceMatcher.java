@@ -2,7 +2,6 @@ package nl.my888.springframework.test.web.servlet.halmatchers;
 
 import org.springframework.http.MediaType;
 
-import static nl.ilent.springframework.hateoas.HypermediaRestConstants.MEDIA_TYPE_APPLICATION_HAL_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 /**
@@ -11,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 public class RootResourceMatcher extends ResourceMatcher {
 
-    private MediaType contentMediaType = MEDIA_TYPE_APPLICATION_HAL_JSON;
+    private MediaType contentMediaType = HalConstants.MEDIA_TYPE_APPLICATION_HAL_JSON;
 
     public static RootResourceMatcher rootResource() {
         return new RootResourceMatcher();

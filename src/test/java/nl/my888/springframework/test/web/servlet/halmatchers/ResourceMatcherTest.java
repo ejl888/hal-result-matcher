@@ -5,11 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by ejl on 23/04/15.
- */
 public class ResourceMatcherTest {
-
 
     @Test
     public void testToStringForm() throws Exception {

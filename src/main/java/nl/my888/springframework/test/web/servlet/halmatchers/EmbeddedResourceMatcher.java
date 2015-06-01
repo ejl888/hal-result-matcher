@@ -1,19 +1,19 @@
 package nl.my888.springframework.test.web.servlet.halmatchers;
 
-import static nl.ilent.rest.test.TestUtils.makePathToEmbedded;
-import static nl.ilent.rest.test.halmatchers.RootResourceMatcher.rootResource;
+import static nl.my888.springframework.test.web.servlet.halmatchers.MatcherUtils.pathToEmbedded;
+import static nl.my888.springframework.test.web.servlet.halmatchers.RootResourceMatcher.rootResource;
 
 /**
- * Created by ejl on 30/03/15.
+ * Embedded Resource Matcher
  */
 public class EmbeddedResourceMatcher extends ResourceMatcher {
 
-    public static EmbeddedResourceMatcher rootEmbeddedResource(String relType) {
-        return rootResource().embeddedResource(relType);
+    public static EmbeddedResourceMatcher rootEmbeddedResource(String rel) {
+        return rootResource().embeddedResource(rel);
     }
 
-    EmbeddedResourceMatcher(String relType, ResourceMatcher parent) {
-        super(parent.absolutePath(makePathToEmbedded(relType)));
+    EmbeddedResourceMatcher(String rel, ResourceMatcher parent) {
+        super(parent.absolutePath(pathToEmbedded(rel)));
     }
 
     @Override

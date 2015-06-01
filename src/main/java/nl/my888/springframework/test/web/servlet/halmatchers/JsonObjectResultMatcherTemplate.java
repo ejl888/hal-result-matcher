@@ -3,8 +3,7 @@ package nl.my888.springframework.test.web.servlet.halmatchers;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import nl.ilent.rest.test.JsonPathBuilder;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.hamcrest.Matcher;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -108,10 +107,6 @@ public class JsonObjectResultMatcherTemplate<T extends JsonObjectResultMatcherTe
 
     protected final void addMatcher(ResultMatcher resultMatcher) {
         resultMatchers.add(resultMatcher);
-    }
-
-    protected final JsonPathBuilder pathBuilder() {
-        return new JsonPathBuilder(path);
     }
 
     String toJsonIndex(int index) {
