@@ -2,6 +2,7 @@ package nl.my888.springframework.test.web.servlet.halmatchers;
 
 import java.net.URI;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.test.web.servlet.result.JsonPathResultMatchers;
 
 import static java.lang.String.format;
@@ -60,6 +61,12 @@ public class ResourceMatcher extends JsonObjectResultMatcherTemplate<ResourceMat
     }
 
     private JsonPathResultMatchers jsonPathLinkHref(String link) {
-        return jsonPath(getPath() + "." + link + ".href");
+        return jsonPath(appendToPath(link + ".href"));
+    }
+
+    private String appendToPath(String s) {
+        final String path = getPath();
+
+        return StringUtils.isEmpty(path) ? s : path + "." + s;
     }
 }
